@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
       body: Stack(
         children: [
           Center(
-            child: Text('Welcome to My Candy Box!!'),
+            child: Text('Welcome to My Candy Box!!!'),
           ),
           // Align(child: FloatingActionButton(),)
         ],
