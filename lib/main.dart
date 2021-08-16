@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_candybox/widgets/main_drawer.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,13 +29,14 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.deepPurpleAccent),
-          leading: IconButton(
-            icon: Icon(Icons.menu, size: 40), // change this size and style
-            onPressed: () => _scaffoldKey.currentState.openDrawer(),
-          )),
+        elevation: 0,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.deepPurpleAccent),
+        leading: IconButton(
+          icon: Icon(Icons.menu, size: 40), // change this size and style
+          onPressed: () => _scaffoldKey.currentState.openDrawer(),
+        ),
+      ),
       drawer: MainDrawer(),
       body: Stack(
         children: [
@@ -43,43 +45,6 @@ class MyHomePage extends StatelessWidget {
           ),
           // Align(child: FloatingActionButton(),)
         ],
-      ),
-    );
-  }
-}
-
-class MainDrawer extends StatelessWidget {
-  const MainDrawer({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 240,
-      child: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('flutter_logo.png'),
-                    radius: 50,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Text('FLUTTER CANDY BOX'),
-                ],
-              ),
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('HOME'),
-            ),
-            Divider(),
-          ],
-        ),
       ),
     );
   }
